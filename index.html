@@ -22,11 +22,6 @@
       media="screen"
       href="./css/index.css"
     />
-    <script src="./js/index.js"></script>
-    <script
-      src="https://kit.fontawesome.com/49ef6ccbf0.js"
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body>
     <nav class="navbar">
@@ -41,11 +36,11 @@
             </div>
             <div class="gridDiv">
               <div class="nameStatus">
-                <p class="name">Username</p>
+                <p class="name">Contact Name</p>
                 <p class="status">Online</p>
               </div>
             </div>
-            <div class="gridDiv jc">
+            <div class="gridDiv jc settingsDiv">
               <div class="chatSettingsDiv">
                 <div class="dot"></div>
                 <div class="dot"></div>
@@ -53,15 +48,23 @@
               </div>
             </div>
           </div>
-          <div></div>
+          <div class="messagesContainer">
+            <div class="messagesWrapper"></div>
+          </div>
           <div class="chatForm">
-            <form method="POST">
+            <form method="POST" class="form">
+              <input
+                type="text"
+                class="userInput"
+                placeholder="Guest"
+                autofocus
+              />
               <input
                 type="text"
                 class="formInput"
                 placeholder="Say something..."
               />
-              <button class="submitBtn">
+              <button type="submit" class="submitBtn">
                 <i class="fas fa-paper-plane"></i>
               </button>
             </form>
@@ -80,5 +83,20 @@
         >
       </p>
     </footer>
+    <script src="./js/index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/49ef6ccbf0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+      integrity="sha512-59oxERSDGj1eMzmFW3acSaBHEMNi2GaeQC7nQYcTqM0vgcnavi4BpUhLkcJQE2G6fdtn8JVj7brt0EZuBV0ogQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const socket = io('http://35.157.80.184:8080/');
+
+      console.log('socket:', socket);
+    </script>
   </body>
 </html>
