@@ -1,6 +1,6 @@
 # Docler Chat
 
-> Docler Chat is part of an admission challenge proposed by the Docler Holding hiring team.
+Docler Chat is part of an admission challenge proposed by the Docler Holding hiring team.
 
 <br />
 
