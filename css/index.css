@@ -1,3 +1,15 @@
+@keyframes empty {
+  0% {
+    background: rgba(0, 0, 0, 0);
+  }
+  50% {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+
 .chatWrapper {
   width: 100%;
   height: 100%;
@@ -71,12 +83,12 @@
 
 .chatRoomName .settingsDiv .settings {
   height: 39px;
-  width: 70px;
+  width: 121px;
   position: absolute;
   background: #fff;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px, rgba(0, 0, 0, 0.15) 0px 0px 2px;
-  transform: translate(-25px, 50px);
+  transform: translate(-51px, 50px);
   overflow: hidden;
 }
 
@@ -85,7 +97,7 @@
   background: #fff;
   padding: 10px 15px;
   border: none;
-  width: 70px;
+  width: 100%;
   color: #000;
   cursor: pointer;
 }
@@ -203,6 +215,10 @@
   color: #000;
 }
 
+.chatForm form .empty {
+  animation: empty 0.5s ease-in-out infinite;
+}
+
 .chatForm form .userInput:focus {
   outline: none;
 }
@@ -214,18 +230,6 @@
   padding-left: 15px;
   font-size: 16px;
   color: #000;
-}
-
-@keyframes empty {
-  0% {
-    background: rgba(0, 0, 0, 0);
-  }
-  50% {
-    background: rgba(0, 0, 0, 0.1);
-  }
-  100% {
-    background: rgba(0, 0, 0, 0);
-  }
 }
 
 .chatForm form .empty {

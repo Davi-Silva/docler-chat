@@ -53,16 +53,12 @@
           </div>
           <div class="chatForm">
             <form method="POST" class="form">
-              <input
-                type="text"
-                class="userInput"
-                placeholder="Guest"
-                autofocus
-              />
+              <input type="text" class="userInput" placeholder="Guest" />
               <input
                 type="text"
                 class="formInput"
                 placeholder="Say something..."
+                autofocus
               />
               <button type="submit" class="submitBtn">
                 <i class="fas fa-paper-plane"></i>
@@ -83,7 +79,6 @@
         >
       </p>
     </footer>
-    <script src="./js/index.js"></script>
     <script
       src="https://kit.fontawesome.com/49ef6ccbf0.js"
       crossorigin="anonymous"
@@ -93,10 +88,6 @@
       integrity="sha512-59oxERSDGj1eMzmFW3acSaBHEMNi2GaeQC7nQYcTqM0vgcnavi4BpUhLkcJQE2G6fdtn8JVj7brt0EZuBV0ogQ=="
       crossorigin="anonymous"
     ></script>
-    <script>
-      const socket = io('http://35.157.80.184:8080/');
-
-      console.log('socket:', socket);
-    </script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

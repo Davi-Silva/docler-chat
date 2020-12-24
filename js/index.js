@@ -10,6 +10,12 @@ const settingsDiv = document.querySelector('.settingsDiv');
 const chatSettingsDiv = document.querySelector('.chatSettingsDiv');
 const submitBtn = document.querySelector('.submitBtn');
 
+const socket = io('http://35.157.80.184:8080');
+
+socket.on('connect', () => {
+  console.log('Socket.io is connected');
+});
+
 let input = '';
 let scrollTop = 0;
 let openSetting = false;
@@ -27,11 +33,9 @@ function scrollDiv() {
 }
 
 function removeChat() {
+  socket.emit('disconnect');
+  socket.off();
   chatContainer.remove();
-  const closedMessage = document.createElement('p');
-  closedMessage.classList.add('closed');
-  closedMessage.innerHTML = 'Session has ended...';
-  chatWrapper.appendChild(closedMessage);
 }
 
 function createExitMenu() {
@@ -39,7 +43,7 @@ function createExitMenu() {
   parentDiv.classList.add('settings');
   const exitBtn = document.createElement('button');
   exitBtn.classList.add('exitBtn');
-  exitBtn.innerHTML = 'Exit';
+  exitBtn.innerHTML = 'Disconnect';
   exitBtn.addEventListener('click', removeChat);
   parentDiv.appendChild(exitBtn);
   settingsDiv.appendChild(parentDiv);
@@ -61,7 +65,6 @@ function createUserMessage(message) {
 }
 
 function createContactMessage(contactNameString, contactMessageString) {
-  console.log(contactNameString, contactMessageString);
   const contactMessageDiv = document.createElement('div');
   contactMessageDiv.classList.add('contactMessageDiv');
   const contactName = document.createElement('p');
@@ -75,13 +78,9 @@ function createContactMessage(contactNameString, contactMessageString) {
   messagesWrapper.appendChild(contactMessageDiv);
 }
 
-function sendContactMessage() {
-  createContactMessage('Talking Head', "Hello, I'm a talking head");
-  scrollDiv();
-}
-
-userInput.addEventListener('input', () => {
+userInput.addEventListener('input', (e) => {
   user = e.target.value;
+  console.log('user:', user);
 });
 
 formInput.addEventListener('input', (e) => {
@@ -91,27 +90,53 @@ formInput.addEventListener('input', (e) => {
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  if (input.length > 0 && formInput.value.length > 0) {
+  if (
+    input.length > 0 &&
+    formInput.value.length > 0 &&
+    user.length > 0 &&
+    userInput.value.length > 0
+  ) {
+    socket.emit('message', {
+      message: input,
+      user: user,
+    });
+
     createUserMessage(input);
     formInput.value = '';
     scrollDiv();
-    setTimeout(() => {
-      sendContactMessage();
-    }, 500);
   } else {
-    formInput.classList.add('empty');
+    if (input.length === 0 && formInput.value.length === 0) {
+      formInput.classList.add('empty');
+    }
+    if (user.length === 0 && userInput.value.length === 0) {
+      userInput.classList.add('empty');
+    }
     setTimeout(() => {
       formInput.classList.remove('empty');
+      userInput.classList.remove('empty');
     }, 500);
   }
 });
 
 chatSettingsDiv.addEventListener('click', () => {
-  console.log(openSetting);
   if (!openSetting) {
     createExitMenu();
   } else {
     removeExitMenu();
   }
   openSetting = !openSetting;
+});
+
+socket.on('message', (message) => {
+  if (message.user !== user) {
+    createContactMessage(message.user, message.message);
+    scrollDiv();
+  }
+});
+
+socket.on('disconnect', () => {
+  const closedMessage = document.createElement('p');
+  closedMessage.classList.add('closed');
+  closedMessage.innerHTML = 'Session has ended...';
+  chatWrapper.appendChild(closedMessage);
 });
