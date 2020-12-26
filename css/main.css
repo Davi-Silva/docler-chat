@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
 }
 
 html,
@@ -24,23 +24,6 @@ body::-webkit-scrollbar-thumb:active {
   background-color: #5151ff;
 }
 
-.navbar {
-  width: 100%;
-  height: 50px;
-  background: #5151ff;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px, rgba(0, 0, 0, 0.15) 0px 0px 2px;
-  border-bottom: 1px solid #3b3bb1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.navbar .brand {
-  color: #fff;
-  font-size: 18px;
-}
-
 .container {
   height: 100vh;
   width: 100%;
@@ -54,9 +37,16 @@ body::-webkit-scrollbar-thumb:active {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px, rgba(0, 0, 0, 0.15) 0px 0px 2px;
   border-top: 1px solid #3b3bb1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 5px 0;
+}
+
+.footer .brand {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 0.25rem;
 }
 
 .footer .designedBy {
