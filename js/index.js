@@ -189,6 +189,12 @@ socket.on('message', (message) => {
 socket.on('disconnect', () => {
   const closedMessage = document.createElement('p');
   closedMessage.classList.add('closed');
+  if (isDarkTheme) {
+    closedMessage.classList.add('dark');
+  } else {
+    closedMessage.classList.add('light');
+  }
+  closedMessage.classList.add('theme');
   closedMessage.innerHTML = 'Session has ended...';
   chatWrapper.appendChild(closedMessage);
 });

@@ -21,6 +21,7 @@
   width: 40px;
   background: #efefef;
   border-radius: 50px;
+  transition: all 0.2s ease-in-out;
 }
 
 .theme-switcher .theme-switcher-btn {
@@ -30,6 +31,7 @@
   background: #cecece;
   border-radius: 50px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 .theme-switcher .theme-switcher-btn:focus {
@@ -139,6 +141,10 @@
   border-top: 1px solid #3b3bb1;
 }
 
+.chatWrapper .closed.light {
+  color: #353535;
+}
+
 /* ############################## */
 /* ######### DARK THEME ######### */
 /* ############################## */
@@ -171,7 +177,7 @@
 }
 
 .chatContainer.dark {
-  background: #0e0e0e;
+  background: #2f2f2f;
 }
 
 .chatRoomName.dark {
@@ -200,7 +206,7 @@
 }
 
 .messagesContainer.dark {
-  background: #101010;
+  background: #2f2f2f;
 }
 
 .messagesContainer.dark::-webkit-scrollbar {
@@ -232,7 +238,7 @@
 }
 
 .chatForm.dark {
-  border-top: 1px solid transparent;
+  border-top: 1px solid #131313;
 }
 
 .userInput.dark,
@@ -254,4 +260,8 @@
 .footer.dark {
   background: #000;
   border-top: 1px solid #000;
+}
+
+.chatWrapper .closed.dark {
+  color: #fff;
 }
