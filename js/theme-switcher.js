@@ -1,9 +1,10 @@
 const themeSwitchBtn = document.querySelector('.theme-switcher-btn');
-const allThemes = document.querySelectorAll('.theme');
+let allThemes;
 
 switchThemeLight();
 
 function switchThemeLight() {
+  allThemes = document.querySelectorAll('.theme');
   allThemes.forEach((theme) => {
     theme.classList.remove('dark');
     theme.classList.add('light');
@@ -11,6 +12,7 @@ function switchThemeLight() {
 }
 
 function switchThemeDark() {
+  allThemes = document.querySelectorAll('.theme');
   allThemes.forEach((theme) => {
     theme.classList.remove('light');
     theme.classList.add('dark');

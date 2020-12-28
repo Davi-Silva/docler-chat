@@ -41,8 +41,21 @@ function removeChat() {
 function createExitMenu() {
   const parentDiv = document.createElement('div');
   parentDiv.classList.add('settings');
+  parentDiv.classList.add('theme');
   const exitBtn = document.createElement('button');
   exitBtn.classList.add('exitBtn');
+  exitBtn.classList.add('theme');
+  if (isDarkTheme) {
+    parentDiv.classList.remove('light');
+    exitBtn.classList.remove('light');
+    parentDiv.classList.add('dark');
+    exitBtn.classList.add('dark');
+  } else {
+    parentDiv.classList.remove('dark');
+    exitBtn.classList.remove('dark');
+    parentDiv.classList.add('light');
+    exitBtn.classList.add('light');
+  }
   exitBtn.innerHTML = 'Disconnect';
   exitBtn.addEventListener('click', removeChat);
   parentDiv.appendChild(exitBtn);
@@ -56,25 +69,52 @@ function removeExitMenu() {
 
 function createUserMessage(message) {
   const senderMessageDiv = document.createElement('div');
-  senderMessageDiv.classList.add('senderMessageDiv');
   const senderMessage = document.createElement('p');
+
+  senderMessageDiv.classList.add('senderMessageDiv');
   senderMessage.classList.add('senderMessage');
+  senderMessage.classList.add('theme');
+
+  if (isDarkTheme) {
+    senderMessage.classList.remove('light');
+    senderMessage.classList.add('dark');
+  } else {
+    senderMessage.classList.remove('dark');
+    senderMessage.classList.add('light');
+  }
+
   senderMessage.innerHTML = message;
+
   senderMessageDiv.appendChild(senderMessage);
   messagesWrapper.appendChild(senderMessageDiv);
 }
 
 function createContactMessage(contactNameString, contactMessageString) {
   const contactMessageDiv = document.createElement('div');
-  contactMessageDiv.classList.add('contactMessageDiv');
   const contactName = document.createElement('p');
+  const contactMessage = document.createElement('p');
+
+  contactMessageDiv.classList.add('contactMessageDiv');
   contactName.classList.add('contactName');
   contactName.classList.add('theme');
-  contactName.innerHTML = contactNameString;
-  const contactMessage = document.createElement('p');
   contactMessage.classList.add('contactMessage');
   contactMessage.classList.add('theme');
+
+  if (isDarkTheme) {
+    contactName.classList.remove('light');
+    contactName.classList.add('dark');
+    contactMessage.classList.remove('light');
+    contactMessage.classList.add('dark');
+  } else {
+    contactName.classList.remove('dark');
+    contactName.classList.add('light');
+    contactMessage.classList.remove('dark');
+    contactMessage.classList.add('light');
+  }
+
+  contactName.innerHTML = contactNameString;
   contactMessage.innerHTML = contactMessageString;
+
   contactMessageDiv.appendChild(contactName);
   contactMessageDiv.appendChild(contactMessage);
   messagesWrapper.appendChild(contactMessageDiv);

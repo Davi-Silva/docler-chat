@@ -84,6 +84,14 @@
   color: #9a9a9a;
 }
 
+.settings.light {
+  background: #fff !important;
+}
+
+.settings button.light {
+  color: #000 !important;
+}
+
 .chatRoomName .chatSettingsDiv:hover .dot.light {
   background: #b3b3b3;
 }
@@ -92,8 +100,18 @@
   background: #fff;
 }
 
-.contactName.light {
-  color: #585858;
+.contactName.link {
+  color: #585858 !important;
+}
+
+.contactMessage.light {
+  color: #000 !important;
+  background: #f0f2f5 !important;
+}
+
+.senderMessage.light {
+  color: #fff !important;
+  background: #5151ff !important;
 }
 
 .chatForm.light {
@@ -169,12 +187,20 @@
   color: #b3b3b3;
 }
 
+.settings.dark {
+  background: #2f2f2f !important;
+}
+
+.settings button.dark {
+  color: #fff !important;
+}
+
 .chatRoomName .chatSettingsDiv:hover .dot.dark {
   background: #e6e6e6;
 }
 
 .messagesContainer.dark {
-  background: #0e0e0e;
+  background: #101010;
 }
 
 .messagesContainer.dark::-webkit-scrollbar {
@@ -192,7 +218,17 @@
 }
 
 .contactName.dark {
-  color: #fff;
+  color: #fff !important;
+}
+
+.contactMessage.dark {
+  color: #fff !important;
+  background: #2f2f2f !important;
+}
+
+.senderMessage.dark {
+  color: #fff !important;
+  background: #000 !important;
 }
 
 .chatForm.dark {
