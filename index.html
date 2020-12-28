@@ -23,42 +23,51 @@
       media="screen"
       href="./css/index.css"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./css/theme-switcher.css"
+    />
   </head>
-  <body>
-    <div class="container">
+  <body class="body theme">
+    <div class="container theme">
       <div class="chatWrapper">
-        <div class="chatContainer">
-          <div class="chatRoomName">
+        <div class="chatContainer theme">
+          <div class="chatRoomName theme">
             <div class="gridDiv jc">
               <div class="statusColor"></div>
             </div>
             <div class="gridDiv">
               <div class="nameStatus">
-                <p class="name">chatBot2000</p>
-                <p class="status">Online</p>
+                <p class="name theme">chatBot2000</p>
+                <p class="status theme">Online</p>
               </div>
             </div>
             <div class="gridDiv jc settingsDiv">
+              <div class="theme-switcher theme">
+                <button class="theme-switcher-btn theme"></button>
+              </div>
               <div class="chatSettingsDiv">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
+                <div class="dot theme"></div>
+                <div class="dot theme"></div>
+                <div class="dot theme"></div>
               </div>
             </div>
           </div>
-          <div class="messagesContainer">
+          <div class="messagesContainer theme">
             <div class="messagesWrapper"></div>
           </div>
-          <div class="chatForm">
+          <div class="chatForm theme">
             <form method="POST" class="form">
-              <input type="text" class="userInput" placeholder="Guest" />
+              <input type="text" class="userInput theme" placeholder="Guest" />
               <input
                 type="text"
-                class="formInput"
+                class="formInput theme"
                 placeholder="Say something..."
                 autofocus
               />
-              <button type="submit" class="submitBtn">
+              <button type="submit" class="submitBtn theme">
                 <i class="fas fa-paper-plane"></i>
               </button>
             </form>
@@ -66,7 +75,7 @@
         </div>
       </div>
     </div>
-    <footer class="footer">
+    <footer class="footer theme">
       <p class="brand">Docler Chat</p>
       <p class="designedBy">
         Designed by
@@ -87,6 +96,10 @@
       integrity="sha512-59oxERSDGj1eMzmFW3acSaBHEMNi2GaeQC7nQYcTqM0vgcnavi4BpUhLkcJQE2G6fdtn8JVj7brt0EZuBV0ogQ=="
       crossorigin="anonymous"
     ></script>
+    <script>
+      let isDarkTheme = false;
+    </script>
     <script src="./js/index.js"></script>
+    <script src="./js/theme-switcher.js"></script>
   </body>
 </html>

@@ -69,9 +69,11 @@ function createContactMessage(contactNameString, contactMessageString) {
   contactMessageDiv.classList.add('contactMessageDiv');
   const contactName = document.createElement('p');
   contactName.classList.add('contactName');
+  contactName.classList.add('theme');
   contactName.innerHTML = contactNameString;
   const contactMessage = document.createElement('p');
   contactMessage.classList.add('contactMessage');
+  contactMessage.classList.add('theme');
   contactMessage.innerHTML = contactMessageString;
   contactMessageDiv.appendChild(contactName);
   contactMessageDiv.appendChild(contactMessage);
@@ -80,7 +82,6 @@ function createContactMessage(contactNameString, contactMessageString) {
 
 userInput.addEventListener('input', (e) => {
   user = e.target.value;
-  console.log('user:', user);
 });
 
 formInput.addEventListener('input', (e) => {
@@ -106,14 +107,25 @@ form.addEventListener('submit', async (e) => {
     scrollDiv();
   } else {
     if (input.length === 0 && formInput.value.length === 0) {
-      formInput.classList.add('empty');
+      if (isDarkTheme) {
+        formInput.classList.add('darkEmpty');
+      } else {
+        formInput.classList.add('lightEmpty');
+      }
     }
     if (user.length === 0 && userInput.value.length === 0) {
-      userInput.classList.add('empty');
+      if (isDarkTheme) {
+        userInput.classList.add('darkEmpty');
+      } else {
+        userInput.classList.add('lightEmpty');
+      }
     }
     setTimeout(() => {
-      formInput.classList.remove('empty');
-      userInput.classList.remove('empty');
+      formInput.classList.remove('darkEmpty');
+      userInput.classList.remove('darkEmpty');
+
+      formInput.classList.remove('lightEmpty');
+      userInput.classList.remove('lightEmpty');
     }, 500);
   }
 });

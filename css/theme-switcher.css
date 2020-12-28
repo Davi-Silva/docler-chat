@@ -1,0 +1,221 @@
+@keyframes on {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+@keyframes off {
+  0% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.theme-switcher {
+  height: 20px;
+  width: 40px;
+  background: #efefef;
+  border-radius: 50px;
+}
+
+.theme-switcher .theme-switcher-btn {
+  border: none;
+  height: 20px;
+  width: 20px;
+  background: #cecece;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.theme-switcher .theme-switcher-btn:focus {
+  outline: none;
+}
+
+/* ############################### */
+/* ######### LIGHT THEME ######### */
+/* ############################### */
+
+.body.light::-webkit-scrollbar {
+  width: 10px;
+  background-color: #fff;
+}
+
+.body.light::-webkit-scrollbar-thumb {
+  background-color: #5151ff;
+  border: 1px solid #5151ff;
+}
+
+.body.light::-webkit-scrollbar-thumb:active {
+  background-color: #5151ff;
+}
+
+.theme-switcher.dark {
+  background: #efefef;
+}
+
+.theme-switcher .theme-switcher-btn.light {
+  animation: off 0.2s forwards;
+  background: #cecece;
+}
+
+.chatContainer.light {
+  background: #fff;
+}
+
+.container.light {
+  background: #f1f1f1;
+}
+
+.chatRoomName.light {
+  background: #fff;
+  border-bottom: 1px solid #d2d2d2;
+}
+
+.chatRoomName .nameStatus .name.light {
+  color: #000;
+}
+
+.chatRoomName .nameStatus .status.light {
+  color: #9a9a9a;
+}
+
+.chatRoomName .chatSettingsDiv:hover .dot.light {
+  background: #b3b3b3;
+}
+
+.messagesContainer.light {
+  background: #fff;
+}
+
+.contactName.light {
+  color: #585858;
+}
+
+.chatForm.light {
+  border-top: 1px solid #d2d2d2;
+}
+
+.userInput.light,
+.formInput.light {
+  background: #fff;
+  color: #000;
+}
+
+.userInput.light::placeholder,
+.formInput.light::placeholder {
+  color: #989898;
+}
+
+.submitBtn.light {
+  background: #5151ff;
+  border-top: 1px solid #5151ff !important;
+}
+
+.footer.light {
+  background: #5151ff;
+  border-top: 1px solid #3b3bb1;
+}
+
+/* ############################## */
+/* ######### DARK THEME ######### */
+/* ############################## */
+
+.body.dark::-webkit-scrollbar {
+  width: 10px;
+  background-color: #000;
+}
+
+.body.dark::-webkit-scrollbar-thumb {
+  background-color: #2d2d2d;
+  border: 1px solid #2d2d2d;
+}
+
+.body.dark::-webkit-scrollbar-thumb:active {
+  background-color: #2d2d2d;
+}
+
+.theme-switcher.dark {
+  background: #5d5d5d;
+}
+
+.theme-switcher .theme-switcher-btn.dark {
+  animation: on 0.2s forwards;
+  background: #131313;
+}
+
+.container.dark {
+  background: #131313;
+}
+
+.chatContainer.dark {
+  background: #0e0e0e;
+}
+
+.chatRoomName.dark {
+  background: #2f2f2f;
+  border-bottom: 1px solid #191919;
+}
+
+.chatRoomName .nameStatus .name.dark {
+  color: #fff;
+}
+
+.chatRoomName .nameStatus .status.dark {
+  color: #b3b3b3;
+}
+
+.chatRoomName .chatSettingsDiv:hover .dot.dark {
+  background: #e6e6e6;
+}
+
+.messagesContainer.dark {
+  background: #0e0e0e;
+}
+
+.messagesContainer.dark::-webkit-scrollbar {
+  width: 5px;
+  background-color: #000;
+}
+
+.messagesContainer.dark::-webkit-scrollbar-thumb {
+  background-color: #2d2d2d;
+  border: 1px solid #2d2d2d;
+}
+
+.messagesContainer.dark::-webkit-scrollbar-thumb:active {
+  background-color: #2d2d2d;
+}
+
+.contactName.dark {
+  color: #fff;
+}
+
+.chatForm.dark {
+  border-top: 1px solid transparent;
+}
+
+.userInput.dark,
+.formInput.dark {
+  background: #2f2f2f;
+  color: #fff !important;
+}
+
+.userInput.dark::placeholder,
+.formInput.dark::placeholder {
+  color: #fff !important;
+}
+
+.submitBtn.dark {
+  background: #000 !important;
+  border-top: 1px solid #000 !important;
+}
+
+.footer.dark {
+  background: #000;
+  border-top: 1px solid #000;
+}
